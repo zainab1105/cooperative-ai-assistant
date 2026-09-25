@@ -1,0 +1,139 @@
+[
+  {
+    "id": "pmfby",
+    "name": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+    "keywords": [
+      "crop insurance",
+      "crop damage",
+      "crop loss",
+      "fasal bima",
+      "insurance",
+      "insurance claim",
+      "फसल बीमा",
+      "फसल नुकसान",
+      "पीक विमा",
+      "पिकाचे नुकसान"
+    ],
+    "purpose": "Crop insurance support for farmers against covered crop losses.",
+    "answer": {
+      "English": "Pradhan Mantri Fasal Bima Yojana (PMFBY) is a crop insurance scheme. The official PMFBY portal provides options to apply for crop insurance, calculate premium, check application status, and report crop-loss grievances. The official helpline for grievances and crop-loss reporting is 14447.",
+      "हिन्दी": "प्रधानमंत्री फसल बीमा योजना (PMFBY) किसानों के लिए फसल बीमा योजना है। आधिकारिक PMFBY पोर्टल पर फसल बीमा के लिए आवेदन, प्रीमियम की गणना, आवेदन की स्थिति जांचने और फसल नुकसान से जुड़ी शिकायत दर्ज करने की सुविधाएँ उपलब्ध हैं। शिकायत और फसल नुकसान की रिपोर्ट के लिए आधिकारिक हेल्पलाइन 14447 है।",
+      "मराठी": "प्रधानमंत्री फसल विमा योजना (PMFBY) ही शेतकऱ्यांसाठी पीक विमा योजना आहे. अधिकृत PMFBY पोर्टलवर पीक विम्यासाठी अर्ज करणे, प्रीमियम तपासणे, अर्जाची स्थिती पाहणे आणि पिकाच्या नुकसानीबाबत तक्रार नोंदवणे शक्य आहे. तक्रार आणि पीक नुकसानीच्या माहितीसाठी अधिकृत हेल्पलाइन 14447 आहे."
+    },
+    "source": "PMFBY Official Portal",
+    "url": "https://pmfby.gov.in/"
+  },
+  {
+    "id": "aif",
+    "name": "Agriculture Infrastructure Fund (AIF)",
+    "keywords": [
+      "agriculture infrastructure",
+      "farm infrastructure",
+      "post harvest",
+      "storage",
+      "warehouse",
+      "infrastructure",
+      "कृषि बुनियादी ढांचा",
+      "कृषी पायाभूत सुविधा"
+    ],
+    "purpose": "Supports agricultural infrastructure and post-harvest management infrastructure.",
+    "answer": {
+      "English": "Agriculture Infrastructure Fund (AIF) supports agricultural infrastructure and post-harvest management infrastructure. It is relevant for activities involving agricultural infrastructure and community farming assets.",
+      "हिन्दी": "Agriculture Infrastructure Fund (AIF) कृषि बुनियादी ढाँचे और फसल कटाई के बाद की सुविधाओं से जुड़ी परियोजनाओं के लिए सहायता प्रदान करता है। यह कृषि बुनियादी ढाँचे और सामुदायिक कृषि परिसंपत्तियों से संबंधित गतिविधियों के लिए उपयोगी हो सकता है।",
+      "मराठी": "Agriculture Infrastructure Fund (AIF) कृषी पायाभूत सुविधा आणि कापणीनंतरच्या व्यवस्थापनाशी संबंधित पायाभूत सुविधांसाठी सहाय्य करतो. कृषी पायाभूत सुविधा आणि सामुदायिक कृषी मालमत्तेशी संबंधित प्रकल्पांसाठी ही योजना उपयुक्त आहे."
+    },
+    "source": "Ministry of Cooperation – Detailed Project Reports for PACS",
+    "url": "https://www.cooperation.gov.in/en/detailed-project-reports-pacs"
+  },
+  {
+    "id": "ami",
+    "name": "Agriculture Marketing Infrastructure (AMI)",
+    "keywords": [
+      "agriculture marketing",
+      "marketing infrastructure",
+      "agricultural market",
+      "gram haat",
+      "market infrastructure",
+      "कृषि विपणन",
+      "कृषी विपणन"
+    ],
+    "purpose": "Supports agricultural marketing infrastructure.",
+    "answer": {
+      "English": "Agriculture Marketing Infrastructure (AMI) supports agricultural marketing infrastructure and is intended to strengthen infrastructure related to the agricultural value chain.",
+      "हिन्दी": "Agriculture Marketing Infrastructure (AMI) कृषि विपणन से जुड़ी बुनियादी सुविधाओं के विकास और कृषि मूल्य श्रृंखला को मजबूत करने से संबंधित योजना है।",
+      "मराठी": "Agriculture Marketing Infrastructure (AMI) ही कृषी विपणनाशी संबंधित पायाभूत सुविधा आणि कृषी मूल्य साखळी मजबूत करण्याशी संबंधित योजना आहे."
+    },
+    "source": "Ministry of Cooperation – Detailed Project Reports for PACS",
+    "url": "https://www.cooperation.gov.in/en/detailed-project-reports-pacs"
+  },
+  {
+    "id": "smam",
+    "name": "Sub-Mission on Agricultural Mechanization (SMAM)",
+    "keywords": [
+      "farm machinery",
+      "agricultural machinery",
+      "farm equipment",
+      "tractor",
+      "machine",
+      "mechanization",
+      "कृषि मशीनरी",
+      "कृषी यंत्रसामग्री",
+      "शेतीची यंत्रे"
+    ],
+    "purpose": "Supports agricultural mechanization and farm equipment infrastructure.",
+    "answer": {
+      "English": "Sub-Mission on Agricultural Mechanization (SMAM) supports agricultural mechanization. It includes support related to custom hiring centres and hubs for farm equipment and machinery.",
+      "हिन्दी": "Sub-Mission on Agricultural Mechanization (SMAM) कृषि यंत्रीकरण से संबंधित सहायता प्रदान करता है। इसमें कृषि उपकरण और मशीनरी से जुड़े Custom Hiring Centres और अन्य सुविधाएँ शामिल हैं।",
+      "मराठी": "Sub-Mission on Agricultural Mechanization (SMAM) कृषी यांत्रिकीकरणाशी संबंधित सहाय्य देते. यामध्ये कृषी उपकरणे आणि यंत्रसामग्रीसाठी Custom Hiring Centres आणि संबंधित सुविधांचा समावेश आहे."
+    },
+    "source": "Ministry of Cooperation – Detailed Project Reports for PACS",
+    "url": "https://www.cooperation.gov.in/en/detailed-project-reports-pacs"
+  },
+  {
+    "id": "midh",
+    "name": "Mission for Integrated Development of Horticulture (MIDH)",
+    "keywords": [
+      "horticulture",
+      "fruit farming",
+      "vegetable farming",
+      "gardening",
+      "cold storage",
+      "फल",
+      "सब्जी",
+      "बागवानी",
+      "फलोत्पादन",
+      "भाजीपाला"
+    ],
+    "purpose": "Supports development of the horticulture sector.",
+    "answer": {
+      "English": "Mission for Integrated Development of Horticulture (MIDH) supports the development of the horticulture sector. Activities can include post-harvest infrastructure such as cold storage and cooling facilities.",
+      "हिन्दी": "Mission for Integrated Development of Horticulture (MIDH) बागवानी क्षेत्र के विकास से संबंधित योजना है। इसमें कोल्ड स्टोरेज और कूलिंग सुविधाओं जैसी फसल कटाई के बाद की बुनियादी सुविधाएँ भी शामिल हो सकती हैं।",
+      "मराठी": "Mission for Integrated Development of Horticulture (MIDH) फलोत्पादन आणि बागायती क्षेत्राच्या विकासासाठी आहे. यामध्ये कोल्ड स्टोरेज आणि कूलिंग सुविधांसारख्या कापणीनंतरच्या पायाभूत सुविधांचा समावेश होऊ शकतो."
+    },
+    "source": "Ministry of Cooperation – Detailed Project Reports for PACS",
+    "url": "https://www.cooperation.gov.in/en/detailed-project-reports-pacs"
+  },
+  {
+    "id": "pmfme",
+    "name": "PM Formalization of Micro Food Processing Enterprises (PMFME)",
+    "keywords": [
+      "food processing",
+      "food business",
+      "food processing business",
+      "micro food processing",
+      "processing unit",
+      "खाद्य प्रसंस्करण",
+      "food business",
+      "अन्न प्रक्रिया",
+      "अन्न प्रक्रिया व्यवसाय"
+    ],
+    "purpose": "Supports micro food-processing enterprises.",
+    "answer": {
+      "English": "PM Formalization of Micro Food Processing Enterprises (PMFME) is a scheme related to micro food-processing enterprises. It is relevant for people and organizations involved in small-scale food processing activities.",
+      "हिन्दी": "PM Formalization of Micro Food Processing Enterprises (PMFME) छोटे और सूक्ष्म खाद्य प्रसंस्करण व्यवसायों से संबंधित योजना है। यह छोटे स्तर पर food processing activities करने वाले लोगों और संगठनों के लिए relevant हो सकती है।",
+      "मराठी": "PM Formalization of Micro Food Processing Enterprises (PMFME) ही सूक्ष्म अन्न प्रक्रिया व्यवसायांशी संबंधित योजना आहे. लहान स्तरावर अन्न प्रक्रिया करणाऱ्या व्यक्ती आणि संस्थांसाठी ही योजना संबंधित असू शकते."
+    },
+    "source": "Ministry of Cooperation – Detailed Project Reports for PACS",
+    "url": "https://www.cooperation.gov.in/en/detailed-project-reports-pacs"
+  }
+]
