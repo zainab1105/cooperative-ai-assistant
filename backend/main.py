@@ -353,6 +353,8 @@ Instructions:
   clearly tell the user to check the concerned official
   government portal.
 - Keep the answer simple and practical for rural users.
+- Give a complete answer. Do not stop mid-sentence.
+- Use short steps or bullet points when explaining a process.
 - Do not give a generic PACS answer unless the user is
   actually asking about PACS.
 """
@@ -378,7 +380,7 @@ Instructions:
                         }
                     ],
                     "generationConfig": {
-                        "maxOutputTokens": 500
+                        "maxOutputTokens": 1000
                     }
                 },
                 timeout=20,
