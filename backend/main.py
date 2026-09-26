@@ -1,5 +1,6 @@
 import json
 import requests
+import os
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -19,8 +20,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-OLLAMA_URL = "http://127.0.0.1:11434/api/chat"
-MODEL = "qwen3:0.6b"
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+OPENAI_URL = "https://api.openai.com/v1/responses"
+MODEL = "gpt-5.6-luna"
 
 
 class ChatRequest(BaseModel):
@@ -321,6 +323,82 @@ def chat(request: ChatRequest):
             "language": request.language,
             "translations": fast_answer.get("translations", {}),
             "sources": fast_answer.get("sources", [])
+        }
+
+        # Cloud AI fallback using OpenAI
+    if not OPENAI_API_KEY:
+        return {
+            "reply": "AI service is not configured right now.",
+            "language": language,
+            "sources": []
+        }
+
+    prompt = f"""
+You are a multilingual Cooperative Governance and Legal Assistance AI assistant.
+
+User language: {language}
+
+User question:
+{message}
+
+Instructions:
+- Answer clearly and simply.
+- Prefer the user's selected language.
+- You can answer general questions related to cooperatives,
+  PACS, agriculture, government schemes, rural development,
+  financial literacy and legal/governance assistance.
+- Do not invent government schemes, laws, rules, eligibility,
+  dates or official procedures.
+- If the question requires current or official information that
+  you cannot verify, clearly say that the user should verify it
+  from the concerned official government portal.
+- Keep the answer practical and easy for rural users to understand.
+"""
+
+    try:
+        response = requests.post(
+            OPENAI_URL,
+            headers={
+                "Authorization": f"Bearer {OPENAI_API_KEY}",
+                "Content-Type": "application/json",
+            },
+            json={
+                "model": MODEL,
+                "input": prompt,
+                "max_output_tokens": 500,
+            },
+            timeout=60,
+        )
+
+        response.raise_for_status()
+        data = response.json()
+
+        reply = data.get("output_text", "")
+
+        if not reply:
+            parts = []
+
+            for item in data.get("output", []):
+                for content in item.get("content", []):
+                    if content.get("type") == "output_text":
+                        parts.append(content.get("text", ""))
+
+            reply = "\n".join(parts).strip()
+
+        if not reply:
+            reply = "Sorry, I could not generate an answer right now."
+
+        return {
+            "reply": reply,
+            "language": language,
+            "sources": []
+        }
+
+    except Exception:
+        return {
+            "reply": "Sorry, I could not process this question right now. Please try again.",
+            "language": language,
+            "sources": []
         }
 
     # --------------------------------------------------
