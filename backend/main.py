@@ -22,8 +22,8 @@ app.add_middleware(
 )
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent"
-MODEL = "gemini-3.8-flash"
+GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent"
+MODEL = "gemini-3.6-flash"
 
 
 class ChatRequest(BaseModel):
@@ -302,7 +302,7 @@ def root():
 def health():
     return {
         "status": "healthy",
-        "ai": "OpenAI cloud AI",
+        "ai": "Gemini cloud AI",
         "model": MODEL,
         "fast_answers": "enabled",
         "schemes_loaded": len(SCHEMES)
@@ -358,72 +358,72 @@ Instructions:
 """
 
     try:
-    response = None
+        response = None
 
-    for attempt in range(3):
-        response = requests.post(
-            GEMINI_URL,
-            headers={
-                "x-goog-api-key": GEMINI_API_KEY,
-                "Content-Type": "application/json",
-            },
-            json={
-                "contents": [
-                    {
-                        "parts": [
-                            {
-                                "text": prompt
-                            }
-                        ]
+        for attempt in range(3):
+            response = requests.post(
+                GEMINI_URL,
+                headers={
+                    "x-goog-api-key": GEMINI_API_KEY,
+                    "Content-Type": "application/json",
+                },
+                json={
+                    "contents": [
+                        {
+                            "parts": [
+                                {
+                                    "text": prompt
+                                }
+                            ]
+                        }
+                    ],
+                    "generationConfig": {
+                        "maxOutputTokens": 500
                     }
-                ],
-                "generationConfig": {
-                    "maxOutputTokens": 500
-                }
-            },
-            timeout=20,
-        )
+                },
+                timeout=20,
+            )
 
-        print("Gemini status:", response.status_code)
+            print("Gemini status:", response.status_code)
 
-        if response.status_code != 503:
-            break
+            if response.status_code != 503:
+                break
 
-        if attempt < 2:
-            time.sleep(2 ** attempt)
+            if attempt < 2:
+                time.sleep(2 ** attempt)
 
-    response.raise_for_status()
+        response.raise_for_status()
 
-    data = response.json()
+        data = response.json()
 
-    reply = ""
+        reply = ""
 
-    candidates = data.get("candidates", [])
+        candidates = data.get("candidates", [])
 
-    if candidates:
-        content = candidates[0].get("content", {})
-        parts = content.get("parts", [])
+        if candidates:
+            content = candidates[0].get("content", {})
+            parts = content.get("parts", [])
 
-        reply = "\n".join(
-            part.get("text", "")
-            for part in parts
-            if part.get("text")
-        ).strip()
+            reply = "\n".join(
+                part.get("text", "")
+                for part in parts
+                if part.get("text")
+            ).strip()
 
-    if not reply:
-        reply = "Sorry, I could not generate an answer right now."
+        if not reply:
+            reply = "Sorry, I could not generate an answer right now."
 
-    return {
-        "reply": reply,
-        "language": request.language,
-        "sources": []
-    }
+        return {
+            "reply": reply,
+            "language": request.language,
+            "sources": []
+        }
 
-except Exception as error:
-    print("Gemini error:", error)
+    except Exception as error:
+        print("Gemini error:", error)
 
-    return {
-        "reply": "AI service is temporarily unavailable. Please try again.",
-        "language": request.language,
-        "sources": []
-    }
+        return {
+            "reply": "AI service is temporarily unavailable. Please try again.",
+            "language": request.language,
+            "sources": []
+        }
