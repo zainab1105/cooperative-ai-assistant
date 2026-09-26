@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
+import ReactMarkdown from "react-markdown";
 
 const API_URL =
   import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
@@ -1049,7 +1050,11 @@ useEffect(() => {
                       )}
 
                       <div className="message-text">
-                        {msg.text}
+                        {msg.type === "bot" ? (
+                          <ReactMarkdown>{msg.text}</ReactMarkdown>
+                        ) : (
+                          msg.text
+                        )}
                       </div>
 
                       {msg.type === "bot" && (
