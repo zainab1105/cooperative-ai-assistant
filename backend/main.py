@@ -1,6 +1,7 @@
 import json
 import requests
 import os
+import time
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -357,6 +358,9 @@ Instructions:
 """
 
     try:
+    response = None
+
+    for attempt in range(3):
         response = requests.post(
             GEMINI_URL,
             headers={
@@ -377,41 +381,49 @@ Instructions:
                     "maxOutputTokens": 500
                 }
             },
-            timeout=60,
+            timeout=20,
         )
 
-        response.raise_for_status()
+        print("Gemini status:", response.status_code)
 
-        data = response.json()
+        if response.status_code != 503:
+            break
 
-        reply = ""
+        if attempt < 2:
+            time.sleep(2 ** attempt)
 
-        candidates = data.get("candidates", [])
+    response.raise_for_status()
 
-        if candidates:
-            content = candidates[0].get("content", {})
-            parts = content.get("parts", [])
+    data = response.json()
 
-            reply = "\n".join(
-                part.get("text", "")
-                for part in parts
-                if part.get("text")
-            ).strip()
+    reply = ""
 
-        if not reply:
-            reply = "Sorry, I could not generate an answer right now."
+    candidates = data.get("candidates", [])
 
-        return {
-            "reply": reply,
-            "language": request.language,
-            "sources": []
-        }
+    if candidates:
+        content = candidates[0].get("content", {})
+        parts = content.get("parts", [])
 
-    except Exception as error:
-        print("Gemini error:", error)
+        reply = "\n".join(
+            part.get("text", "")
+            for part in parts
+            if part.get("text")
+        ).strip()
 
-        return {
-            "reply": "Sorry, I could not process this question right now. Please try again.",
-            "language": request.language,
-            "sources": []
-        }
+    if not reply:
+        reply = "Sorry, I could not generate an answer right now."
+
+    return {
+        "reply": reply,
+        "language": request.language,
+        "sources": []
+    }
+
+except Exception as error:
+    print("Gemini error:", error)
+
+    return {
+        "reply": "AI service is temporarily unavailable. Please try again.",
+        "language": request.language,
+        "sources": []
+    }
