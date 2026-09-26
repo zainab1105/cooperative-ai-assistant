@@ -23,9 +23,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-OPENAI_URL = "https://api.openai.com/v1/responses"
-MODEL = "gpt-5.6-luna"
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent"
+MODEL = "gemini-3.8-flash"
 
 
 class ChatRequest(BaseModel):
@@ -327,8 +327,8 @@ def chat(request: ChatRequest):
             "sources": fast_answer.get("sources", [])
         }
 
-    # OpenAI cloud AI fallback
-    if not OPENAI_API_KEY:
+        # Gemini cloud AI fallback
+    if not GEMINI_API_KEY:
         return {
             "reply": "AI service is not configured right now.",
             "language": request.language,
@@ -361,15 +361,24 @@ Instructions:
 
     try:
         response = requests.post(
-            OPENAI_URL,
+            GEMINI_URL,
             headers={
-                "Authorization": f"Bearer {OPENAI_API_KEY}",
+                "x-goog-api-key": GEMINI_API_KEY,
                 "Content-Type": "application/json",
             },
             json={
-                "model": MODEL,
-                "input": prompt,
-                "max_output_tokens": 500,
+                "contents": [
+                    {
+                        "parts": [
+                            {
+                                "text": prompt
+                            }
+                        ]
+                    }
+                ],
+                "generationConfig": {
+                    "maxOutputTokens": 500
+                }
             },
             timeout=60,
         )
@@ -378,17 +387,19 @@ Instructions:
 
         data = response.json()
 
-        reply = data.get("output_text", "")
+        reply = ""
 
-        if not reply:
-            parts = []
+        candidates = data.get("candidates", [])
 
-            for item in data.get("output", []):
-                for content in item.get("content", []):
-                    if content.get("type") == "output_text":
-                        parts.append(content.get("text", ""))
+        if candidates:
+            content = candidates[0].get("content", {})
+            parts = content.get("parts", [])
 
-            reply = "\n".join(parts).strip()
+            reply = "\n".join(
+                part.get("text", "")
+                for part in parts
+                if part.get("text")
+            ).strip()
 
         if not reply:
             reply = "Sorry, I could not generate an answer right now."
@@ -400,7 +411,7 @@ Instructions:
         }
 
     except Exception as error:
-        print("OpenAI error:", error)
+        print("Gemini error:", error)
 
         return {
             "reply": "Sorry, I could not process this question right now. Please try again.",
