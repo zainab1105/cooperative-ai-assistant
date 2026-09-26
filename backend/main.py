@@ -301,12 +301,11 @@ def root():
 def health():
     return {
         "status": "healthy",
-        "ai": "Ollama fallback",
+        "ai": "OpenAI cloud AI",
         "model": MODEL,
         "fast_answers": "enabled",
         "schemes_loaded": len(SCHEMES)
     }
-
 
 @app.post("/chat")
 def chat(request: ChatRequest):
@@ -316,7 +315,7 @@ def chat(request: ChatRequest):
         request.language
     )
 
-    # INSTANT RESPONSE FOR KNOWLEDGE-BASE QUESTIONS
+    # Instant response for verified knowledge-base questions
     if fast_answer:
         return {
             "reply": fast_answer["reply"],
@@ -325,34 +324,36 @@ def chat(request: ChatRequest):
             "sources": fast_answer.get("sources", [])
         }
 
-        # Cloud AI fallback using OpenAI
+    # OpenAI cloud AI fallback
     if not OPENAI_API_KEY:
         return {
             "reply": "AI service is not configured right now.",
-            "language": language,
+            "language": request.language,
             "sources": []
         }
 
     prompt = f"""
 You are a multilingual Cooperative Governance and Legal Assistance AI assistant.
 
-User language: {language}
+User language: {request.language}
 
 User question:
-{message}
+{request.message}
 
 Instructions:
-- Answer clearly and simply.
+- Answer the user's actual question directly.
 - Prefer the user's selected language.
-- You can answer general questions related to cooperatives,
-  PACS, agriculture, government schemes, rural development,
+- You can answer questions related to cooperatives, PACS,
+  agriculture, government schemes, rural development,
   financial literacy and legal/governance assistance.
 - Do not invent government schemes, laws, rules, eligibility,
   dates or official procedures.
-- If the question requires current or official information that
-  you cannot verify, clearly say that the user should verify it
-  from the concerned official government portal.
-- Keep the answer practical and easy for rural users to understand.
+- If current official information cannot be verified,
+  clearly tell the user to check the concerned official
+  government portal.
+- Keep the answer simple and practical for rural users.
+- Do not give a generic PACS answer unless the user is
+  actually asking about PACS.
 """
 
     try:
@@ -371,6 +372,7 @@ Instructions:
         )
 
         response.raise_for_status()
+
         data = response.json()
 
         reply = data.get("output_text", "")
@@ -390,79 +392,15 @@ Instructions:
 
         return {
             "reply": reply,
-            "language": language,
-            "sources": []
-        }
-
-    except Exception:
-        return {
-            "reply": "Sorry, I could not process this question right now. Please try again.",
-            "language": language,
-            "sources": []
-        }
-
-    # --------------------------------------------------
-    # AI FALLBACK FOR UNKNOWN QUESTIONS
-    # --------------------------------------------------
-
-    prompt = f"""
-        You are a helpful multilingual AI assistant for cooperative societies,
-        farmers, rural development and government services.
-
-        User language: {request.language}
-
-        IMPORTANT:
-        - Understand the user's actual question before answering.
-        - Answer the question directly.
-        - Do NOT repeat or simply rephrase the user's question.
-        - Do NOT give a generic PACS answer unless the user is actually asking about PACS.
-        - Do NOT assume the user is asking about a government scheme unless they mention one.
-        - If the user asks about this website or this AI assistant, explain what the assistant does.
-        - If the question is unclear, ask one short clarification question.
-        - Use simple language that rural users can understand.
-        - Do not invent government laws, eligibility rules, deadlines,
-        documents or official procedures.
-        - For government schemes or legal information, use verified information
-        when available.
-        - If verified information is not available, clearly say that and
-        recommend checking the relevant official government source.
-        - Respond in the user's selected language.
-
-Question:
-{request.message}
-"""
-
-    payload = {
-        "model": MODEL,
-        "messages": [
-            {
-                "role": "user",
-                "content": prompt
-            }
-        ],
-        "stream": False
-    }
-
-    try:
-        response = requests.post(
-            OLLAMA_URL,
-            json=payload,
-            timeout=60
-        )
-
-        response.raise_for_status()
-
-        data = response.json()
-
-        return {
-            "reply": data["message"]["content"],
             "language": request.language,
             "sources": []
         }
 
-    except Exception:
+    except Exception as error:
+        print("OpenAI error:", error)
+
         return {
-            "reply": "Sorry, I could not process this question right now.",
+            "reply": "Sorry, I could not process this question right now. Please try again.",
             "language": request.language,
             "sources": []
         }
