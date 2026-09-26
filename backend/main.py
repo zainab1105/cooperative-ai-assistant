@@ -354,7 +354,7 @@ Instructions:
   government portal.
 - Keep the answer simple and practical for rural users.
 - Give a complete answer. Do not stop mid-sentence.
-- Use short steps or bullet points when explaining a process.
+- Use short numbered steps when explaining a process.
 - Do not give a generic PACS answer unless the user is
   actually asking about PACS.
 """
@@ -380,7 +380,10 @@ Instructions:
                         }
                     ],
                     "generationConfig": {
-                        "maxOutputTokens": 1000
+                        "maxOutputTokens": 2000,
+                        "thinkingConfig": {
+                            "thinkingLevel": "minimal"
+                        }
                     }
                 },
                 timeout=20,
