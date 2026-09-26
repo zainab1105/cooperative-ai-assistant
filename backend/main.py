@@ -380,7 +380,7 @@ Instructions:
                         }
                     ],
                     "generationConfig": {
-                        "maxOutputTokens": 2000,
+                        "maxOutputTokens": 4000,
                         "thinkingConfig": {
                             "thinkingLevel": "minimal"
                         }
@@ -400,6 +400,8 @@ Instructions:
         response.raise_for_status()
 
         data = response.json()
+
+        print("Gemini finish reason:", data.get("candidates", [{}])[0].get("finishReason"))
 
         reply = ""
 
