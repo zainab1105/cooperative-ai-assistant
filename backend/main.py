@@ -295,23 +295,40 @@ def get_fast_answer(question, language):
             }
 
     # --------------------------------------------------
-    # 5. PACS — ONLY WHEN ACTUALLY ASKING ABOUT PACS
+    # 5. PACS 
     # --------------------------------------------------
-    if "pacs" in q or "पीएसीएस" in q or "पॅक्स" in q:
+    # --------------------------------------------------
+# 5. PACS
+# --------------------------------------------------
+if "pacs" in q or "पीएसीएस" in q or "पॅक्स" in q:
 
-        if (
-            "what is pacs" in q
-            or "what are pacs" in q
-            or "meaning of pacs" in q
-            or "pacs kya hai" in q
-            or "pacs क्या है" in q
-            or "pacs म्हणजे काय" in q
-        ):
-            return {
-                "reply": website_answers.get(language, website_answers["English"]),
-                "translations": answers["pacs"],
-                "sources": []
-            }
+    if (
+        "what is pacs" in q
+        or "what are pacs" in q
+        or "meaning of pacs" in q
+        or "pacs kya hai" in q
+        or "pacs kya hota hai" in q
+        or "pacs म्हणजे काय" in q
+        or "pacs क्या है" in q
+    ):
+        return {
+            "reply": (
+                "PACS ka full form Primary Agricultural Credit Society hai. "
+                "Ye gaon aur rural areas mein farmers ko agricultural loans "
+                "aur other cooperative services provide karne wali society hai."
+                if language == "Hinglish"
+                else answers["pacs"].get(language, answers["pacs"]["English"])
+            ),
+            "translations": {
+                **answers["pacs"],
+                "Hinglish": (
+                    "PACS ka full form Primary Agricultural Credit Society hai. "
+                    "Ye gaon aur rural areas mein farmers ko agricultural loans "
+                    "aur other cooperative services provide karne wali society hai."
+                )
+            },
+            "sources": []
+        }
 
     # --------------------------------------------------
     # 6. ABOUT THIS WEBSITE / ASSISTANT
