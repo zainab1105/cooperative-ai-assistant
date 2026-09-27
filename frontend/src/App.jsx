@@ -241,6 +241,110 @@ function App() {
 
   const t = translations[language];
 
+    const detectQuestionLanguage = (text) => {
+    const q = text.toLowerCase().trim();
+
+    // Hindi / Marathi Devanagari
+    const devanagari = (q.match(/[\u0900-\u097f]/g) || []).length;
+
+    if (devanagari > 0) {
+      const marathiWords = [
+        "काय",
+        "कसे",
+        "कशी",
+        "कसा",
+        "मिळेल",
+        "आहे",
+        "आहेत",
+        "साठी",
+        "शेतकरी",
+        "कर्ज",
+        "योजना",
+        "कोणत्या",
+        "माहिती",
+        "द्या",
+        "मिळू",
+        "शकते",
+        "शकतो",
+      ];
+
+      const hindiWords = [
+        "क्या",
+        "कैसे",
+        "कैसी",
+        "कैसा",
+        "मिलेगा",
+        "मिल सकता",
+        "है",
+        "हैं",
+        "के लिए",
+        "किसान",
+        "कर्ज",
+        "ऋण",
+        "योजना",
+        "कौनसी",
+        "जानकारी",
+        "बताओ",
+        "बताइए",
+      ];
+
+      const marathiScore = marathiWords.filter((word) =>
+        q.includes(word)
+      ).length;
+
+      const hindiScore = hindiWords.filter((word) =>
+        q.includes(word)
+      ).length;
+
+      if (marathiScore > hindiScore) {
+        return "मराठी";
+      }
+
+      return "हिन्दी";
+    }
+
+    // Hinglish / Roman Hindi
+    const hinglishWords = [
+      "kya",
+      "kaise",
+      "kaisa",
+      "kaisi",
+      "mujhe",
+      "mujhko",
+      "chahiye",
+      "mil sakta",
+      "milti",
+      "milta",
+      "milega",
+      "kaise milega",
+      "ke liye",
+      "ke liye",
+      "hai",
+      "hain",
+      "karna",
+      "karni",
+      "kar sakte",
+      "batao",
+      "bata",
+      "jankari",
+      "kaunsi",
+      "kaunse",
+      "kahan",
+      "kyu",
+      "kyon",
+    ];
+
+    const hinglishScore = hinglishWords.filter((word) =>
+      q.includes(word)
+    ).length;
+
+    if (hinglishScore > 0) {
+      return "Hinglish";
+    }
+
+    return "English";
+  };
+
   // LOAD CHAT HISTORY WHEN ACCOUNT IS OPENED
 useEffect(() => {
   if (!currentUser) {
@@ -346,8 +450,8 @@ useEffect(() => {
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
-              message: msg.question,
-              language: newLanguage,
+              message: text,
+              language: detectQuestionLanguage(msg.question),
             }),
           }
         );
@@ -408,6 +512,8 @@ useEffect(() => {
     setLoading(true);
 
     try {
+      const questionLanguage = detectQuestionLanguage(text);
+
       const response = await fetch(
         `${API_URL}/chat`,
         {
@@ -417,7 +523,7 @@ useEffect(() => {
           },
           body: JSON.stringify({
             message: text,
-            language,
+            language: questionLanguage,
           }),
         }
       );
