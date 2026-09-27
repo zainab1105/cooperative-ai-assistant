@@ -396,7 +396,7 @@ def chat(request: ChatRequest):
             "sources": []
         }
 
-        prompt = f"""
+    prompt = f"""
 You are a multilingual Cooperative Governance and Legal Assistance AI assistant.
 
 Detected language: {request.language}
