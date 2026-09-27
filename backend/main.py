@@ -263,45 +263,58 @@ def get_fast_answer(question, language):
         }
 
     # --------------------------------------------------
-    # 4. PACS
+    # 4. GOVERNMENT SCHEMES
+    # --------------------------------------------------
+        if (
+        "this website" in q
+        or "about this website" in q
+        or "this ai" in q
+        or "about this ai" in q
+        or "what is this website" in q
+        or "website ke baare mein" in q
+        or "website ke bare mein" in q
+        or "is website ke baare mein" in q
+        or "is website ke bare mein" in q
+        or "website kya hai" in q
+        or "ye website kya hai" in q
+        or "ye ai kya hai" in q
+        or "assistant ke baare mein" in q
+        or "assistant ke bare mein" in q
+    ):
+
+                return {
+            "reply": website_answers.get(language, website_answers["English"]),
+            "translations": website_answers,
+            "sources": []
+        }
+
+    website_answers = {
+                "English": "This AI Assistant helps users with cooperative societies, PACS, government schemes, cooperative rules, loans, PMFBY and grievance-related information. You can ask questions in English, Hindi or Marathi using text or voice.",
+                "हिन्दी": "यह AI सहायक सहकारी समितियों, PACS, सरकारी योजनाओं, सहकारी नियमों, ऋण, PMFBY और शिकायत से जुड़ी जानकारी में सहायता करता है। आप हिंदी, अंग्रेज़ी या मराठी में टेक्स्ट या आवाज़ से सवाल पूछ सकते हैं।",
+                "मराठी": "हा AI सहाय्यक सहकारी संस्था, PACS, सरकारी योजना, सहकारी नियम, कर्ज, PMFBY आणि तक्रारीशी संबंधित माहिती देतो. तुम्ही मराठी, हिंदी किंवा इंग्रजीमध्ये टेक्स्ट किंवा आवाजाने प्रश्न विचारू शकता."
+            }
+
+    # --------------------------------------------------
+    # 5. PACS 
     # --------------------------------------------------
     if "pacs" in q or "पीएसीएस" in q or "पॅक्स" in q:
+
         if (
             "what is pacs" in q
             or "what are pacs" in q
             or "meaning of pacs" in q
             or "pacs kya hai" in q
-            or "pacs kya hota hai" in q
-            or "pacs म्हणजे काय" in q
             or "pacs क्या है" in q
+            or "pacs म्हणजे काय" in q
         ):
             return {
-                "reply": (
-                    "PACS ka full form Primary Agricultural Credit Society hai. "
-                    "Ye gaon aur rural areas mein farmers ko agricultural loans "
-                    "aur other cooperative services provide karne wali society hai."
-                    if language == "Hinglish"
-                    else answers["pacs"].get(language, answers["pacs"]["English"])
-                ),
-                "translations": {
-                    **answers["pacs"],
-                    "Hinglish": (
-                        "PACS ka full form Primary Agricultural Credit Society hai. "
-                        "Ye gaon aur rural areas mein farmers ko agricultural loans "
-                        "aur other cooperative services provide karne wali society hai."
-                    )
-                },
+                "reply": website_answers.get(language, website_answers["English"]),
+                "translations": answers["pacs"],
                 "sources": []
             }
 
-        return {
-            "reply": answers["pacs"].get(language, answers["pacs"]["English"]),
-            "translations": answers["pacs"],
-            "sources": []
-        }
-
     # --------------------------------------------------
-    # 5. ABOUT THIS WEBSITE / ASSISTANT
+    # 6. ABOUT THIS WEBSITE / ASSISTANT
     # --------------------------------------------------
     if (
         "this website" in q
@@ -319,8 +332,14 @@ def get_fast_answer(question, language):
         or "assistant ke baare mein" in q
         or "assistant ke bare mein" in q
     ):
+        website_answers = {
+            "English": "This AI Assistant helps users with cooperative societies, PACS, government schemes, cooperative rules, loans, PMFBY and grievance-related information. You can ask questions in English, Hindi or Marathi using text or voice.",
+            "हिन्दी": "यह AI सहायक सहकारी समितियों, PACS, सरकारी योजनाओं, सहकारी नियमों, ऋण, PMFBY और शिकायत से जुड़ी जानकारी में सहायता करता है। आप हिंदी, अंग्रेज़ी या मराठी में टेक्स्ट या आवाज़ से सवाल पूछ सकते हैं।",
+            "मराठी": "हा AI सहाय्यक सहकारी संस्था, PACS, सरकारी योजना, सहकारी नियम, कर्ज, PMFBY आणि तक्रारीशी संबंधित माहिती देतो. तुम्ही मराठी, हिंदी किंवा इंग्रजीमध्ये टेक्स्ट किंवा आवाजाने प्रश्न विचारू शकता."
+        }
+
         return {
-            "reply": website_answers.get(language, website_answers["English"]),
+            "reply": website_answers[language],
             "translations": website_answers,
             "sources": []
         }
