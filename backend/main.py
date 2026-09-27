@@ -265,18 +265,31 @@ def get_fast_answer(question, language):
     # --------------------------------------------------
     # 4. GOVERNMENT SCHEMES
     # --------------------------------------------------
-    if (
-        "government schemes" in q
-        or "government scheme" in q
-        or "govt schemes" in q
-        or "govt scheme" in q
-        or "सरकारी योजना" in q
-        or "सरकारी योजनाएं" in q
-        or "सरकारी योजनाएँ" in q
+        if (
+        "this website" in q
+        or "about this website" in q
+        or "this ai" in q
+        or "about this ai" in q
+        or "what is this website" in q
+        or "website ke baare mein" in q
+        or "website ke bare mein" in q
+        or "is website ke baare mein" in q
+        or "is website ke bare mein" in q
+        or "website kya hai" in q
+        or "ye website kya hai" in q
+        or "ye ai kya hai" in q
+        or "assistant ke baare mein" in q
+        or "assistant ke bare mein" in q
     ):
+        website_answers = {
+            "English": "This AI Assistant helps users with cooperative societies, PACS, government schemes, cooperative rules, loans, PMFBY and grievance-related information. You can ask questions in English, Hindi or Marathi using text or voice.",
+            "हिन्दी": "यह AI सहायक सहकारी समितियों, PACS, सरकारी योजनाओं, सहकारी नियमों, ऋण, PMFBY और शिकायत से जुड़ी जानकारी में सहायता करता है। आप हिंदी, अंग्रेज़ी या मराठी में टेक्स्ट या आवाज़ से सवाल पूछ सकते हैं।",
+            "मराठी": "हा AI सहाय्यक सहकारी संस्था, PACS, सरकारी योजना, सहकारी नियम, कर्ज, PMFBY आणि तक्रारीशी संबंधित माहिती देतो. तुम्ही मराठी, हिंदी किंवा इंग्रजीमध्ये टेक्स्ट किंवा आवाजाने प्रश्न विचारू शकता."
+        }
+
         return {
-            "reply": answers["schemes"].get(language, answers["schemes"]["English"]),
-            "translations": answers["schemes"],
+            "reply": website_answers.get(language, website_answers["English"]),
+            "translations": website_answers,
             "sources": []
         }
 
