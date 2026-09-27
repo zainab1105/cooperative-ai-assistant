@@ -22,8 +22,8 @@ app.add_middleware(
 )
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent"
-MODEL = "gemini-3.6-flash"
+GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent"
+MODEL = "gemini-3.5-flash-lite"
 
 
 class ChatRequest(BaseModel):
