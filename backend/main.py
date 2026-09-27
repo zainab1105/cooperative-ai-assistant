@@ -60,34 +60,92 @@ answers = {
     "pacs": {
         "English": "PACS stands for Primary Agricultural Credit Societies. PACS are cooperative societies that provide services such as agricultural credit and other services to rural communities. The Ministry of Cooperation also supports initiatives such as PACS computerization, Model Bye-laws and diversification of PACS activities.",
         "हिन्दी": "PACS का पूरा नाम Primary Agricultural Credit Societies यानी प्राथमिक कृषि साख समितियाँ है। ये सहकारी समितियाँ ग्रामीण क्षेत्रों में कृषि ऋण और अन्य सेवाएँ उपलब्ध कराने में मदद करती हैं। सहकारिता मंत्रालय PACS के कंप्यूटरीकरण, मॉडल उप-नियम और PACS की विभिन्न गतिविधियों को बढ़ावा देने जैसी पहल करता है।",
-        "मराठी": "PACS म्हणजे Primary Agricultural Credit Societies म्हणजेच प्राथमिक कृषी पतसंस्था. या सहकारी संस्था ग्रामीण भागातील लोकांना कृषी कर्ज आणि इतर सेवा उपलब्ध करून देण्यास मदत करतात. सहकार मंत्रालय PACS चे संगणकीकरण, मॉडेल उपनियम आणि PACS च्या विविध उपक्रमांना प्रोत्साहन देते."
+        "मराठी": "PACS म्हणजे Primary Agricultural Credit Societies म्हणजेच प्राथमिक कृषी पतसंस्था. या सहकारी संस्था ग्रामीण भागातील लोकांना कृषी कर्ज आणि इतर सेवा उपलब्ध करून देण्यास मदत करतात. सहकार मंत्रालय PACS चे संगणकीकरण, मॉडेल उपनियम आणि PACS च्या विविध उपक्रमांना प्रोत्साहन देते.",
+        "Hinglish": "PACS ka full form Primary Agricultural Credit Societies hai. Ye cooperative societies hoti hain jo rural areas mein agricultural credit aur doosri services provide karne mein help karti hain. Ministry of Cooperation PACS ke computerization, Model Bye-laws aur PACS ki different activities ko promote karne jaisi initiatives support karti hai."
     },
 
     "computerization": {
         "English": "The Computerization of PACS project aims to improve the efficiency and transparency of PACS operations, speed up loan processing and enable online operations through common ERP-based software.",
         "हिन्दी": "PACS के कंप्यूटरीकरण का उद्देश्य PACS के कामकाज को अधिक कुशल और पारदर्शी बनाना, ऋण प्रक्रिया को तेज करना और सामान्य ERP आधारित सॉफ्टवेयर के माध्यम से ऑनलाइन कामकाज को सक्षम करना है।",
-        "मराठी": "PACS च्या संगणकीकरणाचा उद्देश PACS चे कामकाज अधिक कार्यक्षम आणि पारदर्शक करणे, कर्ज प्रक्रिया जलद करणे आणि सामान्य ERP आधारित सॉफ्टवेअरद्वारे ऑनलाइन कामकाज सक्षम करणे हा आहे."
+        "मराठी": "PACS च्या संगणकीकरणाचा उद्देश PACS चे कामकाज अधिक कार्यक्षम आणि पारदर्शक करणे, कर्ज प्रक्रिया जलद करणे आणि सामान्य ERP आधारित सॉफ्टवेअरद्वारे ऑनलाइन कामकाज सक्षम करणे हा आहे.",
+        "Hinglish": "PACS computerization project ka aim PACS ke kaam ko zyada efficient aur transparent banana, loan processing ko fast karna aur common ERP-based software ke through online operations enable karna hai."
     },
 
     "bylaws": {
         "English": "The Ministry of Cooperation provides Model Bye-laws for PACS. They support governance, transparency and diversification of PACS activities. The exact provisions can depend on the applicable State Cooperative Societies Act and rules.",
         "हिन्दी": "सहकारिता मंत्रालय PACS के लिए मॉडल उप-नियम उपलब्ध कराता है। इनका उद्देश्य PACS के शासन, पारदर्शिता और विभिन्न गतिविधियों को बढ़ावा देना है। सटीक प्रावधान संबंधित राज्य के सहकारी समिति कानून और नियमों पर निर्भर कर सकते हैं।",
-        "मराठी": "सहकार मंत्रालय PACS साठी मॉडेल उपनियम उपलब्ध करून देते. यामुळे PACS चे प्रशासन, पारदर्शकता आणि विविध उपक्रमांना मदत होते. अचूक तरतुदी संबंधित राज्याच्या सहकारी संस्था कायदा आणि नियमांवर अवलंबून असू शकतात."
+        "मराठी": "सहकार मंत्रालय PACS साठी मॉडेल उपनियम उपलब्ध करून देते. यामुळे PACS चे प्रशासन, पारदर्शकता आणि विविध उपक्रमांना मदत होते. अचूक तरतुदी संबंधित राज्याच्या सहकारी संस्था कायदा आणि नियमांवर अवलंबून असू शकतात.",
+        "Hinglish": "Ministry of Cooperation PACS ke liye Model Bye-laws provide karta hai. Ye PACS ki governance, transparency aur different activities ko support karte hain. Exact provisions applicable State Cooperative Societies Act aur rules par depend kar sakte hain."
     },
 
     "pmfby": {
         "English": "PMFBY stands for Pradhan Mantri Fasal Bima Yojana, a crop insurance scheme. Farmers should use the official PMFBY portal to check current enrollment procedures, eligibility and requirements.",
         "हिन्दी": "PMFBY का पूरा नाम प्रधानमंत्री फसल बीमा योजना है। यह फसल बीमा योजना है। किसान वर्तमान नामांकन प्रक्रिया, पात्रता और आवश्यकताओं की जानकारी के लिए आधिकारिक PMFBY पोर्टल देख सकते हैं।",
-        "मराठी": "PMFBY म्हणजे प्रधानमंत्री फसल विमा योजना. ही पीक विमा योजना आहे. शेतकऱ्यांनी सध्याची नोंदणी प्रक्रिया, पात्रता आणि आवश्यक कागदपत्रांची माहिती जाणून घेण्यासाठी अधिकृत PMFBY पोर्टल तपासावे."
+        "मराठी": "PMFBY म्हणजे प्रधानमंत्री फसल विमा योजना. ही पीक विमा योजना आहे. शेतकऱ्यांनी सध्याची नोंदणी प्रक्रिया, पात्रता आणि आवश्यक कागदपत्रांची माहिती जाणून घेण्यासाठी अधिकृत PMFBY पोर्टल तपासावे.",
+        "Hinglish": "PMFBY ka full form Pradhan Mantri Fasal Bima Yojana hai. Ye ek crop insurance scheme hai. Current enrollment process, eligibility aur requirements check karne ke liye farmers official PMFBY portal dekh sakte hain."
     },
 
     "schemes": {
         "English": "The Ministry of Cooperation lists several schemes and initiatives relevant to agriculture, PACS and rural development. These include Agriculture Infrastructure Fund (AIF), Agriculture Marketing Infrastructure (AMI), Sub-Mission on Agricultural Mechanization (SMAM), Mission for Integrated Development of Horticulture (MIDH), PM Formalization of Micro Food Processing Enterprises (PMFME), and Pradhan Mantri Fasal Bima Yojana (PMFBY).",
         "हिन्दी": "सहकारिता मंत्रालय कृषि, PACS और ग्रामीण विकास से संबंधित कई योजनाओं और पहलों की जानकारी देता है। इनमें Agriculture Infrastructure Fund (AIF), Agriculture Marketing Infrastructure (AMI), Sub-Mission on Agricultural Mechanization (SMAM), Mission for Integrated Development of Horticulture (MIDH), PM Formalization of Micro Food Processing Enterprises (PMFME) और Pradhan Mantri Fasal Bima Yojana (PMFBY) शामिल हैं।",
-        "मराठी": "सहकार मंत्रालय कृषी, PACS आणि ग्रामीण विकासाशी संबंधित अनेक योजना आणि उपक्रमांची माहिती देते. यामध्ये Agriculture Infrastructure Fund (AIF), Agriculture Marketing Infrastructure (AMI), Sub-Mission on Agricultural Mechanization (SMAM), Mission for Integrated Development of Horticulture (MIDH), PM Formalization of Micro Food Processing Enterprises (PMFME) आणि Pradhan Mantri Fasal Bima Yojana (PMFBY) यांचा समावेश आहे."
+        "मराठी": "सहकार मंत्रालय कृषी, PACS आणि ग्रामीण विकासाशी संबंधित अनेक योजना आणि उपक्रमांची माहिती देते. यामध्ये Agriculture Infrastructure Fund (AIF), Agriculture Marketing Infrastructure (AMI), Sub-Mission on Agricultural Mechanization (SMAM), Mission for Integrated Development of Horticulture (MIDH), PM Formalization of Micro Food Processing Enterprises (PMFME) आणि Pradhan Mantri Fasal Bima Yojana (PMFBY) यांचा समावेश आहे.",
+        "Hinglish": "Ministry of Cooperation agriculture, PACS aur rural development se related kai schemes aur initiatives ki information deta hai. Ismein Agriculture Infrastructure Fund (AIF), Agriculture Marketing Infrastructure (AMI), SMAM, MIDH, PMFME aur Pradhan Mantri Fasal Bima Yojana (PMFBY) shamil hain."
     }
 }
 
+def detect_question_language(question, selected_language="English"):
+    q = question.lower().strip()
+
+    # Hindi / Marathi written in Devanagari
+    devanagari = (q.encode("utf-8").decode("utf-8"))
+
+    marathi_words = [
+        "काय", "कसे", "कशी", "कसा", "मिळेल",
+        "आहे", "आहेत", "साठी", "शेतकरी", "कर्ज",
+        "योजना", "कोणत्या", "माहिती", "द्या",
+        "मिळू", "शकते", "शकतो"
+    ]
+
+    hindi_words = [
+        "क्या", "कैसे", "कैसी", "कैसा", "मिलेगा",
+        "मिल सकता", "है", "हैं", "के लिए",
+        "किसान", "ऋण", "योजना", "कौनसी",
+        "जानकारी", "बताओ", "बताइए"
+    ]
+
+    marathi_score = sum(1 for word in marathi_words if word in q)
+    hindi_score = sum(1 for word in hindi_words if word in q)
+
+    if marathi_score > hindi_score and marathi_score > 0:
+        return "मराठी"
+
+    if hindi_score > 0:
+        return "हिन्दी"
+
+    # Roman Hindi / Hinglish
+    hinglish_words = [
+        "kya", "kaise", "kaisa", "kaisi",
+        "mujhe", "mujhko", "chahiye",
+        "mil sakta", "milti", "milta", "milega",
+        "ke liye", "hai", "hain",
+        "karna", "karni", "kar sakte",
+        "batao", "bata", "jankari",
+        "kaunsi", "kaunse", "kahan",
+        "kyu", "kyon"
+    ]
+
+    hinglish_score = sum(
+        1 for word in hinglish_words if word in q
+    )
+
+    if hinglish_score > 0:
+        return "Hinglish"
+
+    # English / unknown → selected UI language
+    if selected_language in ["English", "हिन्दी", "मराठी"]:
+        return selected_language
+
+    return "English"
 
 # --------------------------------------------------
 # ACTUAL SCHEME DATABASE SEARCH
@@ -165,7 +223,7 @@ def get_fast_answer(question, language):
         or "उपनियम" in q
     ):
         return {
-            "reply": answers["bylaws"][language],
+            "reply": answers["bylaws"].get(language, answers["bylaws"]["English"]),
             "translations": answers["bylaws"],
             "sources": []
         }
@@ -183,7 +241,7 @@ def get_fast_answer(question, language):
         or "संगणकीकरण" in q
     ):
         return {
-            "reply": answers["computerization"][language],
+            "reply": answers["computerization"].get(language, answers["computerization"]["English"]),
             "translations": answers["computerization"],
             "sources": []
         }
@@ -199,7 +257,7 @@ def get_fast_answer(question, language):
         or "पीक विमा" in q
     ):
         return {
-            "reply": answers["pmfby"][language],
+            "reply": answers["pmfby"].get(language, answers["pmfby"]["English"]),
             "translations": answers["pmfby"],
             "sources": []
         }
@@ -217,7 +275,7 @@ def get_fast_answer(question, language):
         or "सरकारी योजनाएँ" in q
     ):
         return {
-            "reply": answers["schemes"][language],
+            "reply": answers["schemes"].get(language, answers["schemes"]["English"]),
             "translations": answers["schemes"],
             "sources": []
         }
@@ -236,7 +294,7 @@ def get_fast_answer(question, language):
             or "pacs म्हणजे काय" in q
         ):
             return {
-                "reply": answers["pacs"][language],
+                "reply": website_answers.get(language, website_answers["English"]),
                 "translations": answers["pacs"],
                 "sources": []
             }
@@ -311,9 +369,14 @@ def health():
 @app.post("/chat")
 def chat(request: ChatRequest):
 
-    fast_answer = get_fast_answer(
+    detected_language = detect_question_language(
         request.message,
         request.language
+    )
+
+    fast_answer = get_fast_answer(
+        request.message,
+        detected_language
     )
 
     # Instant response for verified knowledge-base questions
@@ -333,17 +396,36 @@ def chat(request: ChatRequest):
             "sources": []
         }
 
-    prompt = f"""
+        prompt = f"""
 You are a multilingual Cooperative Governance and Legal Assistance AI assistant.
 
-User language: {request.language}
+Detected language: {request.language}
 
 User question:
 {request.message}
 
+STRICT LANGUAGE RULES:
+- Your response MUST use the same language and writing style as the user's question.
+- If the user writes Hinglish (Hindi using English/Roman letters), the ENTIRE response MUST be in natural Roman Hindi/Hinglish.
+- For Hinglish, DO NOT answer in English.
+- Do NOT explain that the user is using Hinglish, Hindi, Roman script, or any language.
+- Do NOT write sentences such as "Although your question is written in Hindi..." or "Since your question is in Hinglish..."
+- Do NOT translate the user's question into English.
+- If the user writes Hindi in Devanagari, answer completely in Hindi.
+- If the user writes Marathi, answer completely in Marathi.
+- If the user writes English, answer completely in English.
+
+HINGLISH EXAMPLE:
+User: "Loan kaise mil sakta hai?"
+
+Correct:
+"Loan lene ke liye sabse pehle aapko decide karna hoga ki aapko kis type ka loan chahiye."
+
+Incorrect:
+"To get a loan, first you need to decide what type of loan you need."
+
 Instructions:
 - Answer the user's actual question directly.
-- Prefer the user's selected language.
 - You can answer questions related to cooperatives, PACS,
   agriculture, government schemes, rural development,
   financial literacy and legal/governance assistance.
