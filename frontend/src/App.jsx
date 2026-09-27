@@ -195,12 +195,12 @@ const translations = {
 };
 
 const popularSchemes = [
-  ["🌱", "PM Fasal Bima Yojana (PMFBY)", "PMFBY"],
-  ["🚜", "SMAM (Farm Machinery)", "SMAM"],
-  ["🏢", "Agriculture Infrastructure Fund (AIF)", "AIF"],
-  ["🏪", "Agriculture Marketing Infrastructure (AMI)", "AMI"],
-  ["🌿", "MIDH (Horticulture)", "MIDH"],
-  ["🍱", "PMFME (Food Processing)", "PMFME"],
+  ["🌱", "PM Fasal Bima Yojana (PMFBY)", "PM Fasal Bima Yojana (PMFBY)"],
+  ["🚜", "SMAM (Farm Machinery)", "SMAM (Farm Machinery)"],
+  ["🏢", "Agriculture Infrastructure Fund (AIF)", "Agriculture Infrastructure Fund (AIF)"],
+  ["🏪", "Agriculture Marketing Infrastructure (AMI)", "Agriculture Marketing Infrastructure (AMI)"],
+  ["🌿", "MIDH (Horticulture)", "MIDH (Horticulture)"],
+  ["🍱", "PMFME (Food Processing)", "PMFME (Food Processing)"],
 ];
 
 function App() {
