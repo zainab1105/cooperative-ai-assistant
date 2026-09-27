@@ -487,7 +487,7 @@ Instructions:
 
             print("Gemini status:", response.status_code)
 
-            if response.status_code != 503:
+            if response.status_code not in (429, 503):
                 break
 
             if attempt < 2:
