@@ -294,7 +294,7 @@ def get_fast_answer(question, language):
                 "मराठी": "हा AI सहाय्यक सहकारी संस्था, PACS, सरकारी योजना, सहकारी नियम, कर्ज, PMFBY आणि तक्रारीशी संबंधित माहिती देतो. तुम्ही मराठी, हिंदी किंवा इंग्रजीमध्ये टेक्स्ट किंवा आवाजाने प्रश्न विचारू शकता."
             }
 
-    # --------------------------------------------------
+# --------------------------------------------------
 # 5. PACS
 # --------------------------------------------------
     if "pacs" in q or "पीएसीएस" in q or "पॅक्स" in q:
@@ -309,17 +309,10 @@ def get_fast_answer(question, language):
         or "pacs म्हणजे काय" in q
     ):
 
-        if language == "Hinglish":
-            pacs_answer = (
-                "PACS ka full form Primary Agricultural Credit Society hai. "
-                "Ye gaon aur rural areas mein farmers ko agricultural loans "
-                "aur other cooperative services provide karne wali society hai."
-            )
-        else:
             pacs_answer = answers["pacs"].get(
-                language,
-                answers["pacs"]["English"]
-            )
+            language,
+            answers["pacs"]["English"]
+        )
 
         return {
             "reply": pacs_answer,
