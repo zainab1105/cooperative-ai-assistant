@@ -1966,3 +1966,27 @@ footer {
     flex-shrink: 0;
   }
 }
+
+/* FIX DROPDOWNS ON MOBILE */
+.chat-header,
+.chat-header-actions,
+.chat-language,
+.language-dropdown,
+.account-wrapper {
+  position: relative;
+  z-index: 1000;
+}
+
+.chat-header {
+  overflow: visible !important;
+}
+
+.chat-section {
+  overflow: visible !important;
+}
+
+.language-menu,
+.account-menu {
+  position: absolute !important;
+  z-index: 99999 !important;
+}
