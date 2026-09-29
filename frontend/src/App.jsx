@@ -214,6 +214,7 @@ function App() {
 
   const [languageMenu, setLanguageMenu] = useState(false);
   const [mobileSidebar, setMobileSidebar] = useState(false);
+  const documentInputRef = useRef(null);
 
   const [currentUser, setCurrentUser] = useState(
     JSON.parse(
@@ -1260,11 +1261,25 @@ useEffect(() => {
               className="document-button"
               type="button"
               title="Ask from Document"
+              onClick={() => documentInputRef.current?.click()}
             >
               <span className="material-symbols-outlined">
                 find_in_page
               </span>
             </button>
+
+            <input
+              ref={documentInputRef}
+              type="file"
+              accept=".pdf,.txt,.doc,.docx"
+              style={{ display: "none" }}
+              onChange={(e) => {
+                const file = e.target.files?.[0];
+                if (file) {
+                  console.log("Selected document:", file.name);
+                }
+              }}
+            />
 
             <input
               type="text"
@@ -1281,16 +1296,6 @@ useEffect(() => {
                 }
               }}
             />
-
-            <button
-              className="document-button"
-              type="button"
-              title="Ask from Document"
-            >
-              <span className="material-symbols-outlined">
-                find_in_page
-              </span>
-            </button>
 
             <button
               className="send-button"
