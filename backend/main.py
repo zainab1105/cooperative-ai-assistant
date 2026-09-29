@@ -8,7 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 app = FastAPI(
-    title="Cooperative AI Assistant",
+    title="MIRA - Multilingual Intelligent Rural Assistant",
     description="Multilingual Cooperative Governance and Legal Assistance Chatbot",
     version="1.0.0",
 )
@@ -373,7 +373,7 @@ def get_fast_answer(question, language):
 def root():
     return {
         "status": "online",
-        "message": "Cooperative AI Assistant API is running",
+        "message": "MIRA API is running",
     }
 
 

@@ -18,7 +18,7 @@ const translations = {
     popular: "Popular Schemes",
     official: "Official Source",
     thinking: "Finding information...",
-    assistant: "AI Assistant",
+    assistant: "MIRA",
     categories: "Services",
     error: "Sorry, I could not connect to the assistant. Please try again.",
     account: "Account",
@@ -817,7 +817,7 @@ useEffect(() => {
         <div className="chat-title">
           <div className="bot-avatar">🤖</div>
 
-          <h2>AI Assistant</h2>
+          <h2>MIRA | Multilingual Intelligent Rural Assistant</h2>
         </div>
 
         <div className="header-right">
