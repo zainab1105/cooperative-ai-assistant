@@ -1256,6 +1256,13 @@ useEffect(() => {
               🎙️
             </button>
 
+            <button
+              className="document-button"
+              type="button"
+            >
+              📄
+            </button>
+
             <input
               type="text"
               placeholder={
@@ -1271,6 +1278,13 @@ useEffect(() => {
                 }
               }}
             />
+
+            <button
+              className="document-button"
+              type="button"
+            >
+              📄
+            </button>
 
             <button
               className="send-button"
