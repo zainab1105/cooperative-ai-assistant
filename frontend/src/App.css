@@ -852,7 +852,9 @@ footer {
 
 @media (max-width: 500px) {
   .dashboard {
-    padding: 0 8px;
+    display: block;
+    width: 100%;
+    padding: 8px;
   }
 
   .chat-messages {
