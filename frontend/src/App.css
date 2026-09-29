@@ -837,7 +837,8 @@ footer {
   }
 
   .header {
-    padding: 14px 18px;
+    height: 58px;
+    padding: 0 14px;
   }
 
   .brand h1 {
@@ -1816,15 +1817,18 @@ footer {
 
   .chat-title {
     min-width: 0;
+    flex: 1;
   }
 
   .chat-title h2 {
-    font-size: 20px;
+     font-size: 17px;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .header-right {
-    flex-shrink: 0;
+    display: none;
   }
 
   /* Fix chat header */
