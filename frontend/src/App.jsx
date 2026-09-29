@@ -1290,6 +1290,11 @@ useEffect(() => {
                   const data = await response.json();
 
                   console.log("Document upload:", data);
+
+                  if (!response.ok) {
+                    throw new Error(data.detail || "Upload failed");
+                  }
+
                   alert(`${file.name} uploaded successfully!`);
                 } catch (error) {
                   console.error("Document upload error:", error);
