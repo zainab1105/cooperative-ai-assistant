@@ -213,6 +213,7 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   const [languageMenu, setLanguageMenu] = useState(false);
+  const [mobileSidebar, setMobileSidebar] = useState(false);
 
   const [currentUser, setCurrentUser] = useState(
     JSON.parse(
@@ -829,6 +830,13 @@ useEffect(() => {
               unko rehne dena */}
         </div>
 
+        <button
+          className="mobile-menu-button"
+          onClick={() => setMobileSidebar(!mobileSidebar)}
+        >
+          ☰
+        </button>
+
       </header>
 
       {/* MAIN */}
@@ -1350,6 +1358,64 @@ useEffect(() => {
           </div>
 
         </aside>
+
+        {mobileSidebar && (
+          <div
+            className="mobile-sidebar-overlay"
+            onClick={() => setMobileSidebar(false)}
+          >
+            <aside
+              className="mobile-rightbar"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                className="mobile-sidebar-close"
+                onClick={() => setMobileSidebar(false)}
+              >
+                ✕
+              </button>
+
+              <div className="right-card">
+                <h3>💡 {t.suggestions}</h3>
+
+                <div className="suggestions">
+                  {t.suggestionsList.map((question) => (
+                    <button
+                      key={question}
+                      onClick={() => {
+                        handleSend(question);
+                        setMobileSidebar(false);
+                      }}
+                    >
+                      <span>{question}</span>
+                      <span>›</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="right-card">
+                <h3>📚 {t.popular}</h3>
+
+                <div className="popular-list">
+                  {popularSchemes.map(([icon, name, query]) => (
+                    <button
+                      key={query}
+                      onClick={() => {
+                        handleSend(query);
+                        setMobileSidebar(false);
+                      }}
+                    >
+                      <span className="scheme-icon">{icon}</span>
+                      <span>{name}</span>
+                      <span>›</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </aside>
+          </div>
+        )}
 
       </main>
 
