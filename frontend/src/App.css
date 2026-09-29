@@ -2056,3 +2056,19 @@ footer {
     margin-bottom: 16px;
   }
 }
+
+.document-button {
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.document-button .material-symbols-outlined {
+  font-size: 25px;
+}

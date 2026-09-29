@@ -1259,8 +1259,11 @@ useEffect(() => {
             <button
               className="document-button"
               type="button"
+              title="Ask from Document"
             >
-              📄
+              <span className="material-symbols-outlined">
+                find_in_page
+              </span>
             </button>
 
             <input
@@ -1282,8 +1285,11 @@ useEffect(() => {
             <button
               className="document-button"
               type="button"
+              title="Ask from Document"
             >
-              📄
+              <span className="material-symbols-outlined">
+                find_in_page
+              </span>
             </button>
 
             <button
