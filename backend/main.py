@@ -3,7 +3,7 @@ import requests
 import os
 import time
 
-from fastapi import FastAPI
+from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
@@ -51,6 +51,12 @@ def load_schemes():
 
 SCHEMES = load_schemes()
 
+@app.post("/upload-document")
+async def upload_document(file: UploadFile = File(...)):
+    return {
+        "filename": file.filename,
+        "message": "Document uploaded successfully."
+    }
 
 # --------------------------------------------------
 # FAST DEMO ANSWERS
