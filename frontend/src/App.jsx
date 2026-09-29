@@ -1273,11 +1273,30 @@ useEffect(() => {
               type="file"
               accept=".pdf,.txt,.doc,.docx"
               style={{ display: "none" }}
-              onChange={(e) => {
+              onChange={async (e) => {
                 const file = e.target.files?.[0];
-                if (file) {
-                  console.log("Selected document:", file.name);
+
+                if (!file) return;
+
+                const formData = new FormData();
+                formData.append("file", file);
+
+                try {
+                  const response = await fetch(`${API_URL}/upload-document`, {
+                    method: "POST",
+                    body: formData,
+                  });
+
+                  const data = await response.json();
+
+                  console.log("Document upload:", data);
+                  alert(`${file.name} uploaded successfully!`);
+                } catch (error) {
+                  console.error("Document upload error:", error);
+                  alert("Document upload failed.");
                 }
+
+                e.target.value = "";
               }}
             />
 
